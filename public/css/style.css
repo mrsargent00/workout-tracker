@@ -1,0 +1,126 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+/* create tile container - in dashboard layout */
+.create-tile-container {
+    display: flex;
+    flex-direction: column;
+    width: 48%;
+    background-color: gray;
+    padding: 25px;
+    margin-top: 25px;
+    border-radius: 10px;
+
+}
+
+.create-tile-container h2 {
+    text-align: center;
+}
+
+.create-tile-container .field, .create-tile-container button {
+    margin-bottom: 10px;
+    height: 20px;
+}
+
+/* container for tile-partials */
+.rendered-tile-partials {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+/* tile partials */
+.tile-partial {
+    width: 30%;
+    max-height: 100%;
+    margin: 10px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+}
+
+.tile-container {
+
+}
+
+.tile-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-left {
+    width: 75%;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.header-right {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    align-items:flex-end;
+    margin-right: 10px;
+    justify-content: center;
+}
+
+.header-right a {
+    display: flex;
+    width: 100px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.update-value {
+    width: 90px;
+    height: 20px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+}
+
+
+.update-tile-btn {
+    margin-bottom: 10px;
+    border-radius: 10px;
+    /* following three remove button defaults */
+    width: 100px;
+    height: 30px;
+    border-style: none;
+    background-color: yellow; 
+    text-decoration: none;
+    font-size: .9em;
+    color: black;
+}
+  
+.delete-tile {
+    border-radius: 10px;
+    background-color: red; 
+    text-decoration: none;
+    font-size: .9em;
+    color: white;
+ }
+
+.tile-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.tile-body p {
+    /* top right bottom left NO COMMAS */
+    margin: 0 10px 10px 10px;
+}
+
+.tracker-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:250px; 
+    width:250;
+}
+
+.tile-footer {
+    /* top right bottom left NO COMMAS */
+    margin: 0 10px 0 10px;
+}
