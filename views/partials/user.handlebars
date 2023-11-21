@@ -1,0 +1,29 @@
+<div class="dashboard-partial">
+
+    <div class="dashboard-container">
+
+        <div class="dashboard-header">
+
+            <div class="header-left">
+                <h2><a href="/users/{{id}}">{{first_name}} {{last_name}}</a></h2>
+            </div>
+
+            {{!-- these buttons are only rendered if a "user_logged_in" flag is passed in --}}
+            <div class="header-right">
+                {{#if user_logged_in}}
+                {{/if}}
+            </div>
+
+        </div>
+
+        <div class="dashboard-body">
+            <p>would like to render small versions of trackers that are linked to the tile/:id page</p>
+            <p>{{tiles.length}} Tiles</p>
+        </div>
+
+        <div class="dashboard-footer">
+        </div>
+
+    </div>
+    
+</div>
