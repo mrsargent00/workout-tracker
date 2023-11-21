@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Landing Page</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="navbar">
+            <!-- conditionally render login or logout links -->
+            <a href="/">Home</a>
+            <a href="/dashboard">Dashboard</a>
+            {{#if logged_in}}
+            <button id="logout">Logout</button>
+            {{else}}
+            <a href="/login">Login</a>
+            {{/if}}
+        </div>
+        <h1 class="title">Workout Trackers</h1>
+    </div>
+
+    <div class="main">
+        <main>
+        <!-- render the layout -->
+            {{{ body }}}
+        </main>
+    </div>
+
+    <div class="footer">
+    </div>
+
+    <!-- conditionally render script for logged in users only -->
+    {{#if logged_in}}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="/js/becca-logout.js"></script>
+    {{/if}}
+</body>
+
+</html>
