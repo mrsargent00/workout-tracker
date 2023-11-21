@@ -1,0 +1,35 @@
+<div class="view">
+
+  <div class="column" id="login">
+
+    <h2>Existing Users</h2>
+
+    <input type="email" class="field" id="email-login" placeholder="email@email.com"/>
+    <input type="password" class="field" id="password-login" placeholder="password"/>
+ 
+    <button class="button" id="login-btn">Login</button>
+
+  </div>
+
+
+  <div class="column" id="signup">
+
+    <h2>New Users</h2>
+
+    <input type="text" class="field" id="first-name-signup" placeholder="First Name (required)"/>
+    <input type="text" class="field" id="last-name-signup" placeholder="Last Name (required)"/>
+    {{!-- how to make the date-of-birth field be a dropdown? --}}
+    <input type="date" class="field" id="date-of-birth-signup" placeholder="Date of Birth"/>
+    <input type="email" class="field" id="email-signup" placeholder="email@email.com (required)"/>
+    <input type="password" class="field" id="password-signup" placeholder="password (at least 5 characters)"/>
+ 
+    <button class="button" id="signup-btn">Sign Up</button>
+    
+  </div>
+    
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="/js/becca-login.js"></script>
+<script src="/js/becca-signup.js"></script>

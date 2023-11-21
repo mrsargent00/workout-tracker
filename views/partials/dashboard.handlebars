@@ -1,0 +1,27 @@
+
+
+<h2>My Tiles:</h2>
+<div class="rendered-tile-partials">
+    
+    {{#each tiles as |tile|}}
+        {{> test-becca-tile}}
+        {{else}}
+        <h6>there are currently no tiles, create your first one!</h6>
+    {{/each}}
+
+</div>
+
+<div class="wrapper">
+    <div class="create-tile-container">
+        <h2 id="new-tile-header">Create new tile</h2>
+        <input type="title" class="field" id="new-tile-title" placeholder="Tile Title"/>
+        <input type="description" class="field" id="new-tile-description" placeholder="Describe your goal here."/>
+        <input type="number" class="field" id="new-tile-goal" placeholder="Numeric goal"/>
+        <button class="button" id="create-btn">Create</button>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="/js/becca-update-tracker.js"></script>
+
+{{!-- additional scripts --}}
