@@ -22,15 +22,15 @@ router.get('/becca', async (req, res) => {
   res.render('test-becca');
 });
 
-// test route for development, endpoint: test-becca-login
-router.get('/test-becca-login', async (req, res) => {
-  // test-becca-login layout
-  res.render('test-becca-login-and-signup');
+// test route for development, endpoint: login
+router.get('/login', async (req, res) => {
+  // login layout
+  res.render('login-and-signup');
 });
 
-// test route for development, endpoint: test-becca-login
+// test route for development, endpoint: login
 router.get('/test-becca-dashboard', async (req, res) => {
-  // test-becca-login layout
+  // login layout
   res.render('test-becca-dashboard');
 });
 
@@ -380,7 +380,7 @@ router.get('/login', async (req, res) => {
       return;
   }
 
-  res.render('test-becca-login-and-signup'); 
+  res.render('login-and-signup'); 
 });
 
 
