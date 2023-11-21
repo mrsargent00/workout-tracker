@@ -262,7 +262,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
       console.log('tiles:', tiles)
 
-      res.render('test-becca-dashboard', {
+      res.render('dashboard', {
         tiles, 
         // "logged_in" flag passed to use in main
         logged_in: req.session.logged_in
@@ -272,33 +272,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
       res.status(500).json(error);
   }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // GET one tile to render to single-posts layout
 router.get('/tiles/:id', withAuth, async (req, res) => {
@@ -371,12 +344,12 @@ router.get('/tiles/:id', withAuth, async (req, res) => {
 
 
 
-// login route -- DEVELOPED BY BECCA
+// login route
 router.get('/login', async (req, res) => {
 
   // if the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-      res.redirect('/test-becca-dashboard');
+      res.redirect('/dashboard');
       return;
   }
 
