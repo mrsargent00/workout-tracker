@@ -1,0 +1,52 @@
+<div class="tile-partial">
+
+    <div class="tile-header">
+
+        <div class="header-left">
+            <h2><a href="/tiles/{{id}}">{{title}}</a></h2>
+            <p class="tagline">By {{user.first_name}} on {{format_date date_created}}</p>
+        </div>
+
+        {{!-- these buttons are only rendered if a "user_logged_in" flag is passed in --}}
+        <div class="header-right">
+            {{#if user_logged_in}}
+                <input type="number" class="field update-value" id="tracker-{{tracker.id}}" placeholder="Enter value to add"/>
+                <button 
+                class="update-tile-btn current-value-{{tracker.current_tracker_status}} tracker-{{tracker.id}}"
+                href="/update/tile/{{id}}">Update Tile</button>
+                <a class="delete-tile"
+                href="/delete/tile/{{id}}">Delete Tile</a>
+            {{/if}}
+        </div>
+
+    </div>
+    
+    <div class="tile-body">
+        <p>Description: {{description}}</p>
+        <p>Current total: {{tracker.current_tracker_status}}</p>
+        {{!-- <p>Goal: {{tracker.tracker_goal}}</p> --}}
+
+        <div class="tracker-view">
+            <div
+            data-preset="bubble"
+            class="ldBar label-center"
+            data-value="{{tracker.percentage}}"
+            data-precision="0.1"
+            style="height: 100%; width: 100%;"
+            ></div>
+        </div>
+
+    </div>
+
+
+    <div class="tile-footer">
+        {{!-- create a condition so it says "comment" singular if length is 1 --}}
+        <a href="/tiles/{{id}}">{{comments.length}} comments</a>
+    </div>
+
+</div>
+
+<link rel="stylesheet" type="text/css" href="/css/loading-bar.css"/>
+<script type="text/javascript" src="/js/loading-bar.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
