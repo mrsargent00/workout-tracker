@@ -1,0 +1,10 @@
+<div>
+
+    {{#each users as |user|}}
+        {{!-- name of partial --}}
+        {{> test-becca-user}}
+        {{else}}
+        <div><p>there are currently no users, check back later!</p></div>
+    {{/each}}
+
+</div>
