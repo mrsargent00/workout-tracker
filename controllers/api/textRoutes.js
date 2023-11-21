@@ -1,9 +1,6 @@
 // delete this file before deployment
 
 const router = require('express').Router();
-// delete this file before deployment
-
-const router = require('express').Router();
 const { User, Tile, Tracker, Comment } = require('../../models');
 
 // The `/api/tests` endpoint
