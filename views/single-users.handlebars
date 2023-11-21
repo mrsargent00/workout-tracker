@@ -1,0 +1,33 @@
+<div class="user-layout">
+
+    <div class="user-container">
+
+        <div class="user-header">
+
+            <div class="header-left">
+                <h2>{{tiles.[0].user.first_name}} {{tiles.[0].user.last_name}}'s Tiles</a></h2>
+            </div>
+
+            {{!-- these buttons are only rendered if a "user_logged_in" flag is passed in --}}
+            {{!-- currently an empty div --}}
+            <div class="header-right">
+                {{#if user_logged_in}}
+                {{/if}}
+            </div>
+
+        </div>
+
+        <div class="user-body">
+            {{#each tiles as |tile|}}
+                {{> test-becca-tile}}
+                {{else}}
+                <h6>this user has no tiles</h6>
+            {{/each}}
+        </div>
+
+        <div class="user-footer">
+        </div>
+
+    </div>
+    
+</div>

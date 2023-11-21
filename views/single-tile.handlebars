@@ -1,0 +1,22 @@
+{{!-- first references the partial
+second passes the "tile" data from the get request through the partial --}}
+
+{{> test-becca-tile tile}}
+
+
+{{#each comments as |comment|}}
+    {{> test-becca-comment}}
+    {{else}}
+    <h6>there are currently no comments, leave the first one!</h6>
+{{/each}}
+
+
+<div class="column" id="create-comment">
+    <h2 id="new-post-header">Leave a comment:</h2>
+    <textarea type="text" class="field" id="new-comment-content" placeholder="Type your comment here."></textarea>
+    <button class="button" id="comment-btn">Comment</button>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+{{!-- <script src="/js/comment.js"></script>
+<script src="/js/deletecomment.js"></script> --}}
