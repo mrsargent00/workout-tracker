@@ -1,9 +1,4 @@
-assignment-instructions/
+node_modules
 package-lock.json
-___notes.txt
-color-palette.jpg
-
-
-node_modules/
-.env
+.vscode
 .DS_Store
