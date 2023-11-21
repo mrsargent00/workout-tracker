@@ -40,10 +40,6 @@
     border-radius: 10px;
 }
 
-.tile-container {
-
-}
-
 .tile-header {
     display: flex;
     flex-direction: row;
