@@ -3,16 +3,35 @@ const { User, Tile, Comment, Tracker } = require('../models');
 const { withAuth } = require('../utils/auth');
 
 
-// test route for development, endpoint: test-becca-login
+// ------------------------------------------------------------------------------------------
+// for testing during development 
+
+// test route for layout development
+router.get('/meg', async (req, res) => {
+  res.render('test-becca');
+});
+
+// test route for any script/route development
+router.get('/ben', async (req, res) => {
+  res.render('test-ben');
+});
+
+// test route for development, endpoint: becca
+router.get('/becca', async (req, res) => {
+  // test-becca layout
+  res.render('test-becca');
+});
+
+// test route for development, endpoint: login
 router.get('/login', async (req, res) => {
   // test-becca-login layout
   res.render('login-and-signup');
 });
 
-// test route for development, endpoint: test-becca-login
-router.get('dashboard', async (req, res) => {
-  // test-becca-login layout
-  res.render('dashboard');
+// test route for development, endpoint: login
+router.get('/test-becca-dashboard', async (req, res) => {
+  // login layout
+  res.render('test-becca-dashboard');
 });
 
 // test route for development
@@ -140,13 +159,6 @@ router.get('/users/:id', withAuth, async (req, res) => {
           return;
       }
 
-      // serialize tiles and comments for handlebars, while adding user_logged_in flag added to each object 
-      // this flag will be set to true/false and used in handlebars for conditional rendering
-
-      // add the 'user_logged_in' flag to each tile
-      // user_logged_in flag should be added also if the user_id of tile = loggedInUser
-      // could i handle this in the model?
-
       const tiles = tileData.map(tile => {
         const oneTile = tile.get({ plain: true });
         oneTile.user_logged_in = loggedInUser === oneTile.user_id || loggedInUser === tile.user_id;
@@ -160,7 +172,7 @@ router.get('/users/:id', withAuth, async (req, res) => {
         return;
       }
       
-      res.render('single-user', { 
+      res.render('test-becca-single-user', { 
           tiles, // user_logged_in flag attached to post (for use in post partial) 
           // "logged_in" flag passed to use in main
           logged_in: req.session.logged_in,
@@ -243,7 +255,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
 
       console.log('tiles:', tiles)
 
-      res.render('test-becca-dashboard', {
+      res.render('dashboard', {
         tiles, 
         // "logged_in" flag passed to use in main
         logged_in: req.session.logged_in
@@ -310,7 +322,7 @@ router.get('/tiles/:id', withAuth, async (req, res) => {
       console.log('comments:', comments)
       
   
-      res.render('test-becca-single-tile', { 
+      res.render('single-tile', { 
           tile, // user_logged_in flag attached to post (for use in post partial) 
           comments, // user_logged_in flag attached to comments (for use in comment partial) 
           // "logged_in" flag passed to use in main
