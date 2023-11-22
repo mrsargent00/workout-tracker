@@ -1,23 +1,14 @@
-<div class="user-layout">
+<div class="single-user-partial">
 
-    <div class="user-container">
+    <div class="single-user-container">
 
-        <div class="user-header">
+        <div class="single-user-header">
 
-            <div class="header-left">
-                <h2>{{tiles.[0].user.first_name}} {{tiles.[0].user.last_name}}'s Tiles</a></h2>
-            </div>
-
-            {{!-- these buttons are only rendered if a "user_logged_in" flag is passed in --}}
-            {{!-- currently an empty div --}}
-            <div class="header-right">
-                {{#if user_logged_in}}
-                {{/if}}
-            </div>
+            <h2>{{tiles.[0].user.first_name}} {{tiles.[0].user.last_name}}'s Tiles</a></h2>
 
         </div>
 
-        <div class="user-body">
+        <div class="single-user-body">
             {{#each tiles as |tile|}}
                 {{> test-becca-tile}}
                 {{else}}

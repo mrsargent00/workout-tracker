@@ -1,0 +1,48 @@
+<div class="delete-confirm-wrapper">
+    <h2 id="delete-tile-header">Are you sure you want to delete your tile? This cannot be undone!</h2>
+    
+    <button id="confirm-delete-btn">Confirm Delete</button>
+
+    <div class="tile-partial">
+
+        <div class="tile-header">
+
+                <a>{{tile.title}}</a>
+                <p class="tagline">Created on {{format_date tile.date_created}}</p>
+
+        </div>
+    
+        <div class="tile-body">
+    
+            <div class="tracker-view">
+                <div
+                data-preset="bubble"
+                class="ldBar label-center"
+                data-value="{{tile.tracker.percentage}}"
+                data-precision="0.1"
+                style="height: 100%; width: 100%;"
+                ></div>
+            </div>
+
+            <p class="description">{{tile.description}}</p>
+
+            <p class="current">Current total: {{tile.tracker.current_tracker_status}}</p>
+
+        </div>
+
+
+        <div class="tile-footer">
+
+            <div class="footer-comment-row comment-count"><a href="/tiles/{{id}}">{{tile.comments.length}} comments</a></div>
+            {{!-- create a condition so it says "comment" singular if length is 1 --}}
+            
+        </div>
+
+    </div>
+
+</div>   
+
+<link rel="stylesheet" type="text/css" href="/css/loading-bar.css"/>
+<script type="text/javascript" src="/js/loading-bar.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="/js/delete-tile.js"></script>

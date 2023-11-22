@@ -1,0 +1,27 @@
+<div class="user-partial">
+    <div class="user-container">
+        
+        <div class="user-header">
+
+            <div class="user-header-left">
+                <a href="/users/{{id}}">{{first_name}} {{last_name}}</a>
+            </div>
+
+            {{!-- these buttons are only rendered if a "user_logged_in" flag is passed in --}}
+            <div class="user-header-right">
+                {{#if user_logged_in}}
+                {{/if}}
+            </div>
+
+        </div>
+
+        <div class="user-body">
+            <p>{{tiles.length}} Tiles</p>
+        </div>
+
+        <div class="user-footer">
+        </div>
+
+    </div>
+    
+</div>
