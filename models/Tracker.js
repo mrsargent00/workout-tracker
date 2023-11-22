@@ -34,7 +34,7 @@ Tracker.init(
         }
       },
       percentage: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.VIRTUAL,
         get() {
           if (this.tracker_goal !== 0) {
             return (this.current_tracker_status / this.tracker_goal) * 100;
@@ -63,4 +63,3 @@ Tracker.init(
   );
   
 module.exports = Tracker;
-  

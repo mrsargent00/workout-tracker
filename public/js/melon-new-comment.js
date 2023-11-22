@@ -40,7 +40,7 @@ const newCommentHandler = async (event) => {
   
 const buttonTest = async (event) => {
     event.preventDefault();
-    document.location.replace('/becca');
+    document.location.replace('/melon');
     // window.location.reload;
     console.log("button clicked")
 }

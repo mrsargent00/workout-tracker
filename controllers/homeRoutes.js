@@ -26,7 +26,7 @@ router.get('/', withAuth, async (req, res) => {
       console.log('users:', users)
 
       // render homepage
-      res.render('test-becca-homepage', {
+      res.render('test-melon-homepage', {
         users,
         logged_in: req.session.logged_in
       });
@@ -143,11 +143,11 @@ router.get('/users/:id', withAuth, async (req, res) => {
 
       // redirect to dashboard if user is visiting their own page
       if (loggedInUser == req.params.id) {
-        res.redirect('/dashboard'); 
+        res.redirect('/test-melon-dashboard'); 
         return;
       }
       
-      res.render('test-becca-single-user', { 
+      res.render('test-melon-single-user', { 
           tiles, // user_logged_in flag attached to post (for use in post partial) 
           // "logged_in" flag passed to use in main
           logged_in: req.session.logged_in,
@@ -220,7 +220,7 @@ router.get('/tiles/:id', withAuth, async (req, res) => {
       console.log('comments:', comments)
       
   
-      res.render('test-becca-single-tile', { 
+      res.render('test-melon-single-tile', { 
           tile, // user_logged_in flag attached to post (for use in post partial) 
           comments, // user_logged_in flag attached to comments (for use in comment partial) 
           // "logged_in" flag passed to use in main
@@ -277,7 +277,7 @@ router.get('/tiles/delete/:id', withAuth, async (req, res) => {
       tile.logged_in = req.session.logged_in;
       console.log('deletetile:', tile)
 
-      res.render('test-becca-confirm-delete-tile', { 
+      res.render('test-melon-confirm-delete-tile', { 
           tile, 
           logged_in: req.session.logged_in
       });
@@ -297,11 +297,11 @@ router.get('/login', async (req, res) => {
 
   // if the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-      res.redirect('/dashboard');
+      res.redirect('/test-melon-dashboard');
       return;
   }
 
-  res.render('login-and-signup'); 
+  res.render('test-melon-login-and-signup'); 
 });
 
 
