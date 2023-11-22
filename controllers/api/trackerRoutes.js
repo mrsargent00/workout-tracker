@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Tile, User, Comment, Tracker } = require('../../models');
-const { withAuth } = require('../../utils/auth');
+const  withAuth = require('../../utils/auth');
 
 // The `/api/tiles` endpoint
 
