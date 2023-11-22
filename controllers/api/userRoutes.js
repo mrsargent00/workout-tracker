@@ -1,6 +1,7 @@
 const router = require('express').Router();
-const { User, Tile, Comment, Tracker } = require('../models');
-const withAuth = require('../utils/auth');
+const { User, Tile, Comment, Tracker } = require('../../models');  // Adjust the relative path accordingly
+const withAuth = require('../../utils/auth');  // Adjust the relative path accordingly
+
 
 // The `/api/users` endpoint
 
