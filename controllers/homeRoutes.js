@@ -297,11 +297,11 @@ router.get('/login', async (req, res) => {
 
   // if the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
-      res.redirect('/test-becca-dashboard');
+      res.redirect('/dashboard');
       return;
   }
 
-  res.render('test-becca-login-and-signup'); 
+  res.render('login-and-signup'); 
 });
 
 
